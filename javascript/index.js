@@ -62,7 +62,29 @@ document.querySelector("#steak").innerHTML += `<li>${"Steak is ready!"}</li>`
 document.querySelector("#steakImg").removeAttribute("hidden");
 return new Promise ((resolve, reject) => setTimeout(() => resolve(steak[8]), 1000));
 })
-// ... Your code here
+
+// Iteration 3 using async/await
+async function makeBroccoli() {
+  try {
+  let step1 = await obtainInstruction("broccoli", 0)
+  document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`;
+  let step2 = await obtainInstruction("broccoli", 1);
+  document.querySelector("#broccoli").innerHTML += `<li>${step2}</li>`;
+  let step3 = await obtainInstruction("broccoli", 2);
+  document.querySelector("#broccoli").innerHTML += `<li>${step3}</li>`;
+  let step4 = await obtainInstruction("broccoli", 3);
+  document.querySelector("#broccoli").innerHTML += `<li>${step4}</li>`;
+  let step5 = await obtainInstruction("broccoli", 4);
+  document.querySelector("#broccoli").innerHTML += `<li>${step5}</li>`;
+  let step6 = await obtainInstruction("broccoli", 5);
+  document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;
+  let step7 = await obtainInstruction("broccoli", 6);
+  document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`;
+  document.querySelector("#broccoliImg").removeAttribute("hidden");
+  document.querySelector("#broccoli").innerHTML += `<li>${"Broccoli is ready!"}</li>`
+} catch(err) {}
+}
+makeBroccoli();
 
 // getInstruction("mashedPotatoes", 1, (step2) => {
 //   document.querySelector("#mashedPotatoes").innerHTML += `<li>${step2}</li>`;
